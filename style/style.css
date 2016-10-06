@@ -1,0 +1,98 @@
+.wrapper{
+	-webkit-perspective: 1600px;
+    perspective: 900px;
+    -webkit-perspective-origin: 20% 50%;
+    perspective-origin: 20% 50%;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+
+.container{
+	display: block;
+	transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    transition: all 1800ms ease;
+    width: 500px;
+	height: 500px;
+}
+
+.activeContainer{
+	display: block;
+	transform-style: preserve-3d;
+    transition: transform 1800ms;
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(-15deg);
+    transform-origin: 0% 75%;
+    width: 500px;
+	height: 500px;
+}
+
+.layer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.container .layer_1 img{
+	transform: translateZ(0px);
+	border: 1px solid grey;
+	background-color: orange;
+	opacity: 0.1;
+	transition: transform 1800ms;
+}
+
+.container .layer_2 img{
+	transform: translateZ(0px);
+	border: 1px solid grey;
+	background-color: cyan;
+	opacity: 0.1;
+	transition: transform 1800ms;
+}
+
+.container .layer_3 img{
+	transform: translateZ(0px);
+	border: 1px solid grey;
+	transition: transform 1800ms;
+}
+
+.activeContainer .layer_1 img{
+	transform: translateZ(60px);
+	border: 1px solid grey;
+	background-color: orange;
+	opacity: 0.1;
+	transition: transform 1800ms;
+}
+
+.activeContainer .layer_2 img{
+	transform: translateZ(120px);
+	border: 1px solid grey;
+	background-color: cyan;
+	opacity: 0.1;
+	transition: transform 1800ms;
+}
+
+.activeContainer .layer_3 img{
+	transform: translateZ(180px);
+	border: 1px solid grey;
+	transition: transform 1800ms;
+}
+
+
+#btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: 100%;
+	z-index: 900;
+	border: 1px solid;
+}
